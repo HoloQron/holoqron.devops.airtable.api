@@ -1,4 +1,6 @@
 const Airtable = require("airtable");
+require("dotenv").config();
+
 const initAirtable = new Airtable.configure({
   endpointUrl: "https://api.airtable.com",
   apiKey: process.env.AIRTABLE_API_KEY,
