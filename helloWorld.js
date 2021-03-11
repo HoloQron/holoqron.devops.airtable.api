@@ -8,14 +8,18 @@ const helloWorld = () => {
     .select({
       view: "Grid view",
     })
-    .eachPage(async (records, fetchNextPage) => {
+    .eachPage((records, fetchNextPage) => {
       ("-------------------------------FETCHING RECORDS---------------------------------");
-      await records.map((record) => console.log(record.get("Name")));
+      records.map((record) => {
+        const line = record.get("Notes");
+        let lineArray = line.split("\n");
+        const cleanedArray = lineArray.filter((line) => line !== "");
+        console.log(cleanedArray);
+      });
       fetchNextPage();
+      ("-------------------------------DONE ---------------------------------");
     })
     .catch((e) => console.log(e));
-
-  ("-------------------------------DONE ---------------------------------");
 };
 
 helloWorld();
