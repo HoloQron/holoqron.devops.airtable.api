@@ -1,0 +1,8 @@
+{
+  "name": "holoqron.devops.airtable.api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:HoloQron/holoqron.devops.airtable.api.git",
+  "author": "AmoDinho <u14284783@tuks.co.za>",
+  "license": "MIT"
+}
