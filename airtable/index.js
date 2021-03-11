@@ -1,10 +1,9 @@
 const Airtable = require("airtable");
 require("dotenv").config();
 
-const initAirtable = new Airtable.configure({
+const initAirtable = new Airtable({
   endpointUrl: "https://api.airtable.com",
   apiKey: process.env.AIRTABLE_API_KEY,
-});
+}).base("appjGlK4KwN8XTOKA");
 
-const URKBase = initAirtable.base("appjGlK4KwN8XTOKA");
-export { URKBase };
+exports.URKBase = initAirtable;

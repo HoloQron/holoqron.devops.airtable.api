@@ -1,7 +1,7 @@
-import { URKBase } from "./airtable";
+const { URKBase } = require("./airtable");
 
 const helloWorld = async () => {
-  URKBase.base("Web Development")
+  URKBase("Web Development")
     .select({
       view: "Main View",
     })
