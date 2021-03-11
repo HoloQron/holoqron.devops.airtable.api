@@ -1,13 +1,21 @@
 const { URKBase } = require("./airtable");
 
-const helloWorld = async () => {
-  URKBase("Web Development")
+const helloWorld = () => {
+  console.log(
+    "----------------------------------------------------------------"
+  );
+  URKBase("Vue.JS")
     .select({
-      view: "Main View",
+      view: "Grid view",
     })
-    .eachPage((records) => {
-      console.log("Name", records);
-    });
+    .eachPage(async (records, fetchNextPage) => {
+      ("-------------------------------FETCHING RECORDS---------------------------------");
+      await records.map((record) => console.log(record.get("Name")));
+      fetchNextPage();
+    })
+    .catch((e) => console.log(e));
+
+  ("-------------------------------DONE ---------------------------------");
 };
 
 helloWorld();
